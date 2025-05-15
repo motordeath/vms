@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark-green: #344e41;
+  --color-forest-green: #3a5a40;
+  --color-medium-green: #588157;
+  --color-light-green: #a3b18a;
+  --color-cream: #dad7cd;
+}
+
+body {
+  @apply bg-[#1e2a23] text-[#dad7cd] min-h-screen;
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+  @apply bg-[#344e41] text-[#dad7cd] h-full transition-all duration-300 ease-in-out;
+}
+
+.main-content {
+  @apply bg-[#1e2a23] text-[#dad7cd];
+}
+
+.card {
+  @apply bg-[#2d3d32] rounded-lg p-4 shadow-md border border-[#3a5a40]/30 overflow-hidden;
+}
+
+.btn-primary {
+  @apply bg-[#588157] hover:bg-[#3a5a40] text-white py-2.5 px-5 rounded-md transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-transparent border border-[#588157] text-[#a3b18a] hover:bg-[#3a5a40]/30 
+          py-2.5 px-5 rounded-md transition-colors;
+}
+
+.active-nav-link {
+  @apply bg-[#588157] text-white;
+}
+
+.gauge-container {
+  @apply relative;
+}
+
+/* Customize the map */
+.leaflet-container {
+  @apply rounded-lg h-full w-full;
+}
+
+.leaflet-control-attribution {
+  @apply text-xs;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#1e2a23];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#3a5a40] rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#588157];
+}
+
+/* Add custom input styling */
+.custom-input {
+  @apply bg-[#2d3d32] border border-[#3a5a40] rounded-md py-2.5 px-4 text-[#dad7cd]
+         focus:outline-none focus:ring-2 focus:ring-[#588157] focus:border-transparent;
+}
+
+/* Alerts styling */
+.alert {
+  @apply p-3 mb-3 rounded-md;
+}
+
+.alert-high {
+  @apply bg-red-800/30 border border-red-700/50;
+}
+
+.alert-medium {
+  @apply bg-amber-800/30 border border-amber-700/50;
+}
+
+.alert-low {
+  @apply bg-blue-800/30 border border-blue-700/50;
+}
+
+/* Responsive improvements */
+@media (max-width: 1024px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .custom-input {
+    @apply py-2 px-4;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    @apply p-3;
+  }
+}
+
+/* Better map markers */
+.leaflet-marker-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Improved table responsiveness */
+.responsive-table {
+  @apply min-w-full divide-y divide-[#3a5a40];
+}
+
+.responsive-table th,
+.responsive-table td {
+  @apply px-4 py-3 whitespace-nowrap;
+}
